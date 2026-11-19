@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Bonbonsy Cukiernia Lublin | torty personalizowane i monoporcje</title>
+<meta name="description" content="Makieta strony Bonbonsy Cukiernia Lublin: torty personalizowane na urodziny, wesela i ważne okazje oraz nowoczesne monoporcje. Narutowicza 55 lok. 2, zamówienia przez WhatsApp 797 894 387.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,900&display=swap" rel="stylesheet">
+<style>
+/* Bonbonsy: ciemne kakao, lustrzana glazura w kolorze fuksji, złoto płatków.
+   Szkielet: hero z monoporcją 3D na złotym talerzyku, dwie specjalności jako duże karty,
+   zamówienie jako rozmowa na WhatsApp (dymki składają wiadomość na żywo), miejsca i kontakt. */
+:root{
+  --cocoa:#22141a;
+  --cocoa2:#33202a;
+  --glaze:#e8336f;
+  --glaze2:#ff7aa6;
+  --gold:#e9c46a;
+  --milk:#ffffff;
+  --wa:#1fa855;
+  --gut:clamp(18px,5vw,64px);
+  --hd:'Bagel Fat One',system-ui,sans-serif;
+  --bd:'Nunito Sans','Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--cocoa);scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--bd);font-size:17px;line-height:1.55;color:var(--milk);background:var(--cocoa);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--hd);font-weight:400;line-height:.95;letter-spacing:-.01em}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-rows:auto 1fr;overflow:hidden;isolation:isolate}
+.glow{position:absolute;right:-12vw;top:-10vh;width:72vw;height:72vw;max-width:980px;max-height:980px;border-radius:50%;z-index:-1;
+  background:radial-gradient(circle,rgba(232,51,111,.45),rgba(232,51,111,0) 62%);animation:pulse 7s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.12) translate(-2vw,3vh)}}
+.sprinkles{position:absolute;inset:0;z-index:-1;opacity:.5;
+  background-image:radial-gradient(circle 2px,var(--gold) 98%,transparent),radial-gradient(circle 1.5px,var(--glaze2) 98%,transparent);
+  background-size:120px 110px,90px 140px;background-position:10px 20px,60px 70px;animation:drift 50s linear infinite}
+@keyframes drift{to{background-position:130px 240px,-30px 350px}}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px var(--gut)}
+.logo{text-decoration:none;font:400 30px var(--hd);color:var(--glaze2)}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,2.6vw,32px);font-weight:700;font-size:15px}
+.nav ul a{text-decoration:none}.nav ul a:hover{text-decoration:underline}
+@media(max-width:760px){.nav ul{display:none}}
+.wabtn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--wa);font-weight:900;font-size:14px;text-decoration:none;white-space:nowrap}
+.stage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;gap:20px;padding:0 var(--gut) 40px}
+.kick{font-weight:900;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(72px,11vw,168px);color:var(--milk);margin-top:8px}
+.cycle{position:relative;height:1.3em;font:900 clamp(22px,2.6vw,34px) var(--bd);color:var(--glaze2);margin-top:6px}
+.cycle span{position:absolute;left:0;opacity:0;animation:show 9s infinite}
+.cycle span:nth-child(2){animation-delay:3s}.cycle span:nth-child(3){animation-delay:6s}
+@keyframes show{0%{opacity:0;transform:translateY(12px)}6%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-12px)}}
+.lede{font-size:clamp(18px,1.6vw,21px);max-width:36ch;margin-top:14px;opacity:.9}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pills span{padding:8px 14px;border-radius:999px;border:1.5px solid rgba(233,196,106,.6);color:var(--gold);font-weight:700;font-size:14px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;border:2px solid var(--milk);font-weight:900;text-decoration:none}
+.btn.f{background:var(--glaze);border-color:var(--glaze)}
+.btn:hover{background:var(--milk);color:var(--cocoa);border-color:var(--milk)}
+.model{position:relative;aspect-ratio:1/1;width:100%;max-width:600px;justify-self:center}
+.plate{position:absolute;left:16%;right:16%;bottom:17%;height:13%;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 35%,#fff3c8,#e9c46a 45%,#9c7a2a 80%);box-shadow:0 18px 30px rgba(0,0,0,.5)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.model figcaption{position:absolute;left:0;right:0;bottom:2%;text-align:center;font-size:12px;opacity:.75}
+@media(max-width:640px){
+  .hero{min-height:0}
+  .stage{grid-template-columns:1fr;gap:0;padding-bottom:28px}
+  .model{max-width:66vw;order:-1;margin:-10px auto -4px}
+}
+
+.sec{padding:clamp(70px,11vh,130px) var(--gut)}
+.wrap{max-width:1180px;margin:0 auto}
+.sec h2{font-size:clamp(48px,7vw,104px)}
+.sec .intro{max-width:54ch;margin-top:16px;font-size:18px;opacity:.9}
+
+/* SPECJALNOŚCI */
+.spec{background:var(--milk);color:var(--cocoa)}
+.spec .kick{color:var(--glaze)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+@media(max-width:820px){.cards{grid-template-columns:1fr}}
+.card{position:relative;border-radius:28px;padding:clamp(26px,3vw,40px);min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.card.a{background:var(--glaze);color:var(--milk)}
+.card.b{background:var(--cocoa);color:var(--milk)}
+.card h3{font-size:clamp(38px,4.4vw,60px)}
+.card p{margin-top:12px;max-width:36ch;opacity:.92}
+.card ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.card li{padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.18);font-weight:700;font-size:14px}
+.deco{position:absolute;right:-30px;top:-30px;width:190px;height:190px;border-radius:50%;opacity:.9}
+.card.a .deco{background:radial-gradient(circle at 35% 30%,#fff 0 6%,transparent 7%),radial-gradient(circle at 50% 45%,#ff9ebd,#c21656 70%)}
+.card.b .deco{background:repeating-conic-gradient(var(--gold) 0 8deg,transparent 8deg 24deg);-webkit-mask:radial-gradient(circle,transparent 30%,#000 31%,#000 60%,transparent 61%);mask:radial-gradient(circle,transparent 30%,#000 31%,#000 60%,transparent 61%);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ZAMÓWIENIE: rozmowa WhatsApp */
+.order{background:var(--cocoa2)}
+.order .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(30px,5vw,70px);align-items:start}
+@media(max-width:900px){.order .wrap{grid-template-columns:1fr}}
+fieldset{border:0;margin-top:26px}
+legend{font-weight:900;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opts span{display:inline-flex;padding:11px 18px;border-radius:999px;border:2px solid rgba(255,255,255,.35);font-weight:700;cursor:pointer;transition:background .2s,border-color .2s}
+.opts input:checked+span{background:var(--glaze);border-color:var(--glaze)}
+.opts input:focus-visible+span{outline:3px solid var(--gold);outline-offset:2px}
+.field{display:flex;gap:12px;flex-wrap:wrap}
+.field input,.field textarea{font:inherit;color:var(--milk);background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.3);border-radius:14px;padding:12px 14px;min-height:50px}
+.field input[type=number]{width:120px}
+.field textarea{width:100%;min-height:90px;resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.5)}
+.phone{position:sticky;top:24px;border-radius:34px;background:#0b141a;border:8px solid #111;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.phead{display:flex;align-items:center;gap:10px;padding:14px 16px;background:#1f2c34}
+.phead i{width:38px;height:38px;border-radius:50%;background:var(--glaze);display:grid;place-items:center;font:400 18px var(--hd);font-style:normal}
+.phead b{display:block;font-size:15px}.phead small{font-size:12px;opacity:.7}
+.chat{min-height:380px;padding:16px 12px;display:flex;flex-direction:column;gap:8px;
+  background:#0b141a repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 10px,transparent 10px 20px)}
+.bub{max-width:82%;padding:9px 12px 18px;border-radius:12px;font-size:15px;line-height:1.4;position:relative;animation:pop .3s ease}
+.bub.me{align-self:flex-end;background:#005c4b;border-top-right-radius:2px}
+.bub.them{align-self:flex-start;background:#202c33;border-top-left-radius:2px}
+.bub time{position:absolute;right:8px;bottom:3px;font-size:10px;opacity:.6}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:none;opacity:1}}
+.send{display:flex;justify-content:center;padding:14px;background:#1f2c34}
+.send a{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;background:var(--wa);font-weight:900;text-decoration:none}
+.note{margin-top:12px;font-size:13px;opacity:.7}
+
+/* GDZIE */
+.where{background:var(--milk);color:var(--cocoa)}
+.where .kick{color:var(--glaze)}
+.where .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(30px,6vw,80px)}
+@media(max-width:860px){.where .wrap{grid-template-columns:1fr}}
+dl{display:grid;grid-template-columns:auto 1fr;gap:12px 22px;margin-top:26px}
+dt{font-weight:900;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding-top:4px;color:var(--glaze)}
+dd{font-size:18px}
+.fair{margin-top:26px;padding:20px 22px;border-radius:20px;background:var(--cocoa);color:var(--milk)}
+.fair b{color:var(--gold)}
+.mapbox{border-radius:24px;overflow:hidden;min-height:400px;border:3px solid var(--cocoa)}
+.mapbox iframe{display:block;width:100%;height:100%;min-height:400px;border:0}
+footer{background:var(--cocoa);color:rgba(255,255,255,.75);padding:32px var(--gut) 48px}
+footer p{max-width:88ch;font-size:13px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.glow,.sprinkles,.cycle span,.card.b .deco,.bub{animation:none}.cycle span:first-child{opacity:1}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="start">
+  <div class="glow" aria-hidden="true"></div><div class="sprinkles" aria-hidden="true"></div>
+  <nav class="nav" aria-label="Menu">
+    <a class="logo" href="#start">Bonbonsy</a>
+    <ul><li><a href="#oferta">Oferta</a></li><li><a href="#zamow">Zamów</a></li><li><a href="#gdzie">Gdzie</a></li></ul>
+    <a class="wabtn" href="https://wa.me/48797894387">WhatsApp</a>
+  </nav>
+  <div class="stage">
+    <div>
+      <div class="kick">Cukiernia · Lublin</div>
+      <h1>Bonbonsy</h1>
+      <div class="cycle"><span>torty personalizowane</span><span>nowoczesne monoporcje</span><span>na urodziny i wesela</span></div>
+      <p class="lede">Torty i monoporcje robione osobiście, ręcznie i na świeżo, z najlepszych składników.</p>
+      <div class="pills"><span>ręcznie</span><span>na świeżo</span><span>produkcja od podstaw</span></div>
+      <div class="ctas"><a class="btn f" href="#zamow">Zamów tort</a><a class="btn" href="#oferta">Zobacz ofertę</a></div>
+    </div>
+    <figure class="model">
+      <div class="plate" aria-hidden="true"></div>
+      <canvas id="cv" role="img" aria-label="Trójwymiarowa monoporcja z różową lustrzaną glazurą i malinami, model wygenerowany komputerowo."></canvas>
+      <figcaption>Monoporcja: model 3D wygenerowany komputerowo.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="sec spec" id="oferta">
+  <div class="wrap">
+    <div class="rv"><div class="kick">Specjalności</div><h2>Dwie rzeczy, robione dobrze</h2></div>
+    <div class="cards">
+      <article class="card a rv"><div class="deco" aria-hidden="true"></div>
+        <h3>Torty personalizowane</h3>
+        <p>Na urodziny, wesela i wszystkie ważne okazje. Każdy robiony pod konkretną okazję i konkretne osoby.</p>
+        <ul><li>urodziny</li><li>wesela</li><li>ważne okazje</li></ul>
+      </article>
+      <article class="card b rv"><div class="deco" aria-hidden="true"></div>
+        <h3>Monoporcje</h3>
+        <p>Nowoczesne desery w jednej porcji, które mają zachwycać smakiem i wyglądem.</p>
+        <ul><li>na słodki stół</li><li>na prezent</li><li>dla siebie</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec order" id="zamow">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Zamówienie</div>
+      <h2>Napisz na WhatsApp</h2>
+      <p class="intro">Zaznacz, czego potrzebujesz, a obok zobaczysz gotową wiadomość. Jednym kliknięciem wyślesz ją na WhatsApp.</p>
+      <form id="f" onsubmit="return false">
+        <fieldset><legend>Okazja</legend><div class="opts">
+          <label><input type="radio" name="occ" value="urodziny" checked><span>urodziny</span></label>
+          <label><input type="radio" name="occ" value="wesele"><span>wesele</span></label>
+          <label><input type="radio" name="occ" value="inna ważna okazja"><span>inna okazja</span></label>
+        </div></fieldset>
+        <fieldset><legend>Co</legend><div class="opts">
+          <label><input type="radio" name="what" value="tort personalizowany" checked><span>tort personalizowany</span></label>
+          <label><input type="radio" name="what" value="monoporcje"><span>monoporcje</span></label>
+        </div></fieldset>
+        <fieldset><legend>Na kiedy i dla ilu osób</legend><div class="field">
+          <input type="date" name="date" aria-label="Data">
+          <input type="number" name="ppl" min="1" max="300" placeholder="osób" aria-label="Liczba osób">
+        </div></fieldset>
+        <fieldset><legend>Pomysł (opcjonalnie)</legend><div class="field">
+          <textarea name="idea" placeholder="np. kolory, motyw, smak" aria-label="Pomysł"></textarea>
+        </div></fieldset>
+      </form>
+    </div>
+    <div class="rv">
+      <div class="phone" aria-label="Podgląd wiadomości">
+        <div class="phead"><i>B</i><div><b>Bonbonsy Cukiernia</b><small>797 894 387</small></div></div>
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <div class="send"><a id="wa" href="https://wa.me/48797894387" rel="noopener">Wyślij na WhatsApp</a></div>
+      </div>
+      <p class="note">Wiadomość otworzy się w Twoim WhatsAppie, nic nie wysyła się samo.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec where" id="gdzie">
+  <div class="wrap">
+    <div class="rv">
+      <div class="kick">Gdzie nas znaleźć</div>
+      <h2>Narutowicza 55</h2>
+      <dl>
+        <dt>Pracownia</dt><dd>ul. Narutowicza 55 lok. 2<br>20-016 Lublin</dd>
+        <dt>Telefon</dt><dd><a href="tel:+48797894387">797 894 387</a> (także WhatsApp)</dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/bonbonsy_cukiernia_lublin/" rel="noopener">@bonbonsy_cukiernia_lublin</a></dd>
+        <dt>Facebook</dt><dd><a href="https://www.facebook.com/profile.php?id=61583056976205" rel="noopener">Bonbonsy Cukiernia Lublin</a></dd>
+      </dl>
+      <p class="fair">Bywamy też na lubelskich jarmarkach, np. na <b>Jarmarku Świętomarcińskim</b> na Krakowskim Przedmieściu. Gdzie stoimy, piszemy na Facebooku.</p>
+    </div>
+    <div class="mapbox rv"><iframe title="Mapa: Bonbonsy, Narutowicza 55, Lublin" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=22.5480%2C51.2395%2C22.5640%2C51.2460&amp;layer=mapnik&amp;marker=51.2427685%2C22.5558814"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć wypieków: monoporcja na ekranie to model 3D wygenerowany komputerowo. W pełnej wersji pojawi się galeria prawdziwych tortów i monoporcji oraz cennik, za zgodą właścicielki. Opis, adres i kontakt pochodzą z facebookowej strony Bonbonsy Cukiernia Lublin.</p>
+</footer>
+
+<script>
+(function(){
+/* rozmowa WhatsApp: dymki składają wiadomość na żywo */
+var f=document.getElementById('f'),chat=document.getElementById('chat'),wa=document.getElementById('wa');
+function t(){var d=new Date();return ('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function fmt(v){if(!v)return'';var p=v.split('-');return p[2]+'.'+p[1]+'.'+p[0]}
+function build(){
+  var occ=f.occ.value,what=f.what.value,date=fmt(f.date.value),ppl=f.ppl.value,idea=f.idea.value.trim();
+  var lines=['Dzień dobry!','Chciał(a)bym zamówić '+what+' na '+occ+'.'];
+  if(date)lines.push('Termin: '+date+'.');
+  if(ppl)lines.push('Liczba osób: '+ppl+'.');
+  if(idea)lines.push('Pomysł: '+idea);
+  lines.push('Czy ten termin jest wolny?');
+  var html='<div class="bub them">Dzień dobry! Napisz, na jaką okazję i na kiedy.<time>'+t()+'</time></div>';
+  lines.forEach(function(l){html+='<div class="bub me">'+esc(l)+'<time>'+t()+'</time></div>'});
+  chat.innerHTML=html;
+  wa.href='https://wa.me/48797894387?text='+encodeURIComponent(lines.join('\n'));
+}
+f.addEventListener('input',build);f.addEventListener('change',build);build();
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js" defer></script>
+<script defer>
+addEventListener('DOMContentLoaded',function(){
+var cv=document.getElementById('cv');if(!window.THREE||!THREE.GLTFLoader){cv.remove();return}
+try{var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){cv.remove();return}
+R.setPixelRatio(Math.min(devicePixelRatio||1,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.08;
+var S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(30,1,.1,50);cam.position.set(0,1.9,6.2);cam.lookAt(0,0,0);
+S.add(new THREE.HemisphereLight(0xffffff,0x3a1020,.9));
+var k=new THREE.DirectionalLight(0xffffff,1.7);k.position.set(-3,5,4);S.add(k);
+var r=new THREE.DirectionalLight(0xff9ebd,1.2);r.position.set(4,2,-3);S.add(r);
+var piv=new THREE.Group();S.add(piv);
+new THREE.GLTFLoader().load('monoporcja.glb',function(g){var o=g.scene,b=new THREE.Box3().setFromObject(o),s=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3()),sc=2.3/Math.max(s.x,s.y,s.z);o.scale.setScalar(sc);o.position.set(-c.x*sc,-c.y*sc,-c.z*sc);piv.add(o)});
+function fit(){var w=cv.clientWidth,h=cv.clientHeight;if(!w)return;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+fit();addEventListener('resize',fit);
+var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+(function loop(now){requestAnimationFrame(loop);if(!vis)return;var t=(now-t0)/1000;
+ piv.rotation.y=still?.6:t*.45;piv.position.y=still?0:Math.sin(t*1.2)*.07;R.render(S,cam)})(t0);
+});
+</script>
+<script data-goatcounter="https://penia-demo.goatcounter.com/count" data-goatcounter-settings='{"path":"bonbonsy"}' async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
